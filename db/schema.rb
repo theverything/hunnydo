@@ -11,6 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130320040116) do
+
+  create_table "todos", force: true do |t|
+    t.string   "task_hash",  limit: 5
+    t.string   "task"
+    t.boolean  "task_done",            default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
