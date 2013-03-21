@@ -9,28 +9,33 @@
 <div class="row">
   <div class="large-8 large-offset-2">
     <div class="row collapse">
+      <%= form_tag("/", method: "post") do %>
       <div class="small-9 columns">
-        <input type="text" placeholder="Dump the trash">
+        <%= hidden_field_tag(:task_hash, params[:hash]) %>
+        <%= text_field_tag(:task, nil, placeholder: "Dump the trash") %>
       </div>
       <div class="small-3 columns">
-        <a href="#" class="postfix button radius">Add</a>
+        <%= submit_tag("Add", class: "postfix button radius"  ) %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="large-8 large-offset-2">
-    <table>
-      <tbody>
-        <% @todo.each do |t| %>
-        <tr>
-          <td><a href="#" class="round button success">Done</a></td>
-          <td width="600"><%= t.task %></td>
-          <td><a href="#" class="round button alert">Remove</a></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @todo.each do |t| %>
+    <div class="row collapse">
+      <div class="small-2 columns">
+        <a class="button prefix radius success" href="#">done</a>
+      </div>
+      <div class="small-6 small-offset-1 columns">
+        <%= t.task %>
+      </div>
+      <div class="small-2 columns">
+        <a class="button postfix radius alert" href="#">remove</a>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 <div class="row">
