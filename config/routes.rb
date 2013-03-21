@@ -1,6 +1,9 @@
 Hunnydo::Application.routes.draw do
   root to: 'todos#index'
   get '/:hash' => 'todos#show'
+  post '/' => 'todos#new'
+  put '/:hash' => 'todos#done'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

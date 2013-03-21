@@ -9,12 +9,18 @@
 <div class="row">
   <div class="large-8 large-offset-2">
     <div class="row collapse">
+      <%= form_tag("/", method: "post") do %>
       <div class="small-9 columns">
-        <input type="text" placeholder="Dump the trash">
+        <%= hidden_field_tag(:task_hash, unique_hash_creator) %>
+        <%= text_field_tag(:task, nil, placeholder: "Dump the trash") %>
       </div>
       <div class="small-3 columns">
-        <span class="postfix button radius">Add</span>
+        <%= submit_tag("Add", class: "postfix button radius"  ) %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+
+        
