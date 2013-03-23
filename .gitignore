@@ -6,7 +6,6 @@
 
 # Config files
 secret_store.rb
-database.yml
 
 # Ignore bundler config.
 /.bundle
