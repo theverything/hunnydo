@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130320040116) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "todos", force: true do |t|
     t.string   "task_hash",  limit: 5
     t.string   "task"
