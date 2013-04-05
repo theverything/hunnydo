@@ -3,7 +3,7 @@ class TodosController < ApplicationController
   end
 
   def show
-    @todo = Todo.where(task_hash: params[:hash], task_done: false).order('created_at DESC')
+    @todo = Todo.where(task_hash: params[:hash]).order('created_at DESC')
   end
 
   def new
