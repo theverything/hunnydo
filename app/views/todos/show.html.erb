@@ -26,13 +26,10 @@
     <% @todo.each do |t| %>
     <div class="row collapse">
       <div class="small-2 columns">
-        <a class="button prefix radius success" href="#">done</a>
+        <input id="cb<%= t.id %>" type="checkbox" <%= checked t.task_done %>>
       </div>
-      <div class="small-6 small-offset-1 columns">
+      <div id="cb<%= t.id %>-task" class="small-9 small-offset-1 columns <%= checked t.task_done %>">
         <%= t.task %>
-      </div>
-      <div class="small-2 columns">
-        <a class="button postfix radius alert" href="#">remove</a>
       </div>
     </div>
     <% end %>
