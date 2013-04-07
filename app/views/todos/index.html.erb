@@ -11,7 +11,7 @@
     <div class="row collapse">
       <%= form_tag("/", method: "post") do %>
       <div class="small-9 columns">
-        <%= hidden_field_tag(:task_hash, unique_hash_creator) %>
+        <%= hidden_field_tag(:task_hash, @unique_hash.random_hash) %>
         <%= text_field_tag(:task, nil, placeholder: "Dump the trash") %>
       </div>
       <div class="small-3 columns">

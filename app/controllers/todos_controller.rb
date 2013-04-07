@@ -1,9 +1,15 @@
 class TodosController < ApplicationController
   def index
+    @unique_hash = RandomHash.new
   end
 
   def show
-    @todo = Todo.where(task_hash: params[:hash]).order('created_at DESC')
+    valid_hash = RandomHash.new(params[:hash])
+    if valid_hash.valid?
+      @todo = Todo.where(task_hash: valid_hash.random_hash).order('created_at DESC')
+    else
+      redirect_to "/oops/#{valid_hash.random_hash}"
+    end
   end
 
   def new
