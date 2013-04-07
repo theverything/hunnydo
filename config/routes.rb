@@ -3,6 +3,7 @@ Hunnydo::Application.routes.draw do
   get '/:hash' => 'todos#show'
   post '/' => 'todos#new'
   put '/:hash' => 'todos#done'
+  get '/oops/:hash' => 'todos#oops'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

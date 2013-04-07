@@ -14,4 +14,8 @@ class TodosController < ApplicationController
     @todo.save
     redirect_to "/#{params[:task_hash]}"
   end
+
+  def oops
+    
+  end
 end
